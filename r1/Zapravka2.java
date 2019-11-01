@@ -458,11 +458,7 @@ public class Zapravka2 {
 	}
 
 	static void doFilling(I2CSensor arduino, byte volume) {
-		for (int i = volume; i >= 0; i--) {
-			arduino.sendData(i, volume);
-			System.out.println(volume);
-			Delay.msDelay(150);
-		}
+		arduino.sendData(volume, volume);
 	}
 
 	static void otpravka(I2CSensor arduino, byte cDy, byte cSy, byte cDz, byte cSz, byte cDx, byte cSx) {
